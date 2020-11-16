@@ -36,4 +36,4 @@ def chart():
     return render_template("chart.html", value=value, companies=companies, code=code, pred_prices=pred_prices)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

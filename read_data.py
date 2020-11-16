@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
 # DB URI
-uri = "postgres://postgres:hy046790hy@localhost:5432/project_3"
+uri = "postgres://sooagdcncjsvwm:b29199e35bf9ffef2888a8cbef6bcfc81d2bdaa8917845e70be4f8820b0dc117@ec2-35-174-88-65.compute-1.amazonaws.com:5432/d2qnvo6mticmk9"
 
 def read_predcited_data(code):
     engine = create_engine(uri)
