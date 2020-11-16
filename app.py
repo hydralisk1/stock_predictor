@@ -1,11 +1,13 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash
 import pandas_datareader as web
 import pandas as pd
 from datetime import date, timedelta
 from whatwehave import what_we_have
 from read_data import read_predcited_data
+import os
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)
 companies = what_we_have()
 
 @app.route("/")
@@ -15,6 +17,10 @@ def index():
 @app.route("/chart", methods=["POST"])
 def chart():
     code = request.form["stock"]
+    if code not in what_we_have():
+        flash(code+" wasn't found}")
+        return redirect(url_for('index'))
+
     if date.today().weekday() == 5 or date.today().weekday() == 6:
         end = date.today() - timedelta(days=(date.today().weekday()-4))
     else:
