@@ -14,12 +14,7 @@ def read_predcited_data(code):
     
     session = Session(engine)
 
-    query = session.query(Predicted.mon, Predicted.tue, Predicted.wed, Predicted.thu, Predicted.fri).filter(Predicted.code == code).order_by(Predicted.week_start_date.desc())
-
-    data = []
     # Run queries to load data from the database server
-    for row in query:
-        for pred in row:
-            data.append(pred)
+    query = session.query(Predicted.mon, Predicted.tue, Predicted.wed, Predicted.thu, Predicted.fri).filter(Predicted.code == code).order_by(Predicted.week_start_date.desc()).first()
 
-    return data
+    return list(query)
