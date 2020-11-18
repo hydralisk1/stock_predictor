@@ -18,6 +18,10 @@ def index():
 def chart():
     return render_template("visualizations.html")
 
+@app.route("/other")
+def other():
+    return render_template("othermodels.html")
+
 @app.route("/resource")
 def resource():
     return render_template("resource.html")
