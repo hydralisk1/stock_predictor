@@ -19,7 +19,7 @@ def api():
     if request.args.get("code"):
         code = request.args.get("code")
     else:
-        code = "AAPL"
+        code = companies[0]
 
     end = date.today().strftime("%Y-%m-%d")
 

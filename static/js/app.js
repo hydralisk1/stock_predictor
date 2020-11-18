@@ -9,21 +9,41 @@ function optionChanged(code){
                     source.push({label: `[${d.code}] ${d.name}`, value: d.code});
                 
             d3.select("#selDataset")
-            .selectAll("option")
-            .data(source)
-            .enter()
-            .append("option")
-            .attr("value", d => d.value)
-            .text(d => d.label);
+              .selectAll("option")
+              .data(source)
+              .enter()
+              .append("option")
+              .attr("value", d => d.value)
+              .text(d => d.label);
             });
 
-            chart(value.value, value.pred_prices, value.code);
+            var daysOpt = [30, 60, 90];
+
+            d3.select("#days")
+              .selectAll("option")
+              .data(daysOpt)
+              .enter()
+              .append("option")
+              .attr("value", d => d)
+              .text(d => `${d} days`);
+            
+            var days = 30;
+
+            d3.selectAll("#days")
+              .on("click", function() {
+                  console.log(days, this.value);
+                    if(days !== this.value)
+                        days = this.value;
+                        chart(value.value, value.pred_prices, value.code, days);
+              });
+
+            chart(value.value, value.pred_prices, value.code, days);
         });
     });
 }
 
-function chart(stock_prices, pred_prices, code){
-    var chart_stock = stock_prices.slice(-30);
+function chart(stock_prices, pred_prices, code, days){
+    var chart_stock = stock_prices.slice(days*-1);
 
     var trace1 = {
         x: chart_stock.map(d => d.date),
