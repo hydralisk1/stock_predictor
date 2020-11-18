@@ -1,0 +1,66 @@
+body {
+	background-color:white;
+	width: 100%;
+}
+
+.row {
+	padding: 0px;
+	margin: 0;
+	border: none;
+}
+
+
+.jumbotron {
+	background-color: #ffffff;
+}
+
+.heading h2 {
+	color: #353535 !important;
+	font-family: 'Montserrat', sans-serif;
+	padding-bottom: 30px;
+}
+
+.banner {
+	height: auto;
+	float: center;
+	margin-top: 60px;
+}
+
+.banner img {
+	width: 80%;
+	height: 300px;
+	margin-top: 20px;
+}
+
+a:hover {
+	color: #B0B0B0 !important;
+	text-decoration: none;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (max-width: 480px) {
+	.heading h2 {
+		padding-bottom: 60px;
+	}
+	.banner img {
+		width: 80% !important;
+		height: 100%;
+	}
+	.heading h2 {
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 1024px) {
+	.banner img {
+		width: 80% !important;
+		height: 100%;
+	}
+	.heading h2 {
+		margin-top: 20px;
+	}
+	.blogtext p {
+		padding-top: 30px;
+	}
+}

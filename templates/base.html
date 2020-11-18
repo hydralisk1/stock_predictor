@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block title %}
+    <title>Final Project</title>
+    {% endblock %}
+    {% block style %}
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/styling.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
+    {% endblock %}
+    {% block additional_style %}
+    {% endblock %}
+</head>
+
+  <body>
+    {% block menu %}
+    <!----------------------------------------------------Webpage Banner------------------------------------------------------------>
+    <div class="container-fluid" id="banner">
+      <br/><br/><br/><br/>    
+      <h1 align="center" class="tagline center-block">Stock Market Predictions</h1>
+    </div>
+    <!----------------------------------------------------Webpage Banner------------------------------------------------------------>
+
+    <!----------------------------------------------------Begin Navbar------------------------------------------------------------>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" id="topnavbar">
+    <!----------------------------------------------------Hambuger Icon------------------------------------------------------------>
+            <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">     
+                      <span class="sr-only">Toggle navigation </span>         
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>         
+                  </button>      
+            </div>
+    <!----------------------------------------------------Hambuger Icon------------------------------------------------------------>
+
+
+    <!----------------------------------------------------Menu Itens------------------------------------------------------------>
+            <div class="collapse navbar-collapse">     
+              <ul align="center" class="nav navbar-nav" >        
+                  <li> <a href="/"><span class="center-underline">Home</span></a></li>
+                  <li> <a href="/info"><span class="center-underline">Information</span></a></li>
+                  <li> <a href="/chart"><span class="center-underline">Visualizations</span></a></li>
+                  <li> <a href="/about"><span class="center-underline">About Us</span></a></li>
+                  <li> <a href="/data"><span class="center-underline">Resources</span></a></li>
+              </ul>
+            </div>
+    <!----------------------------------------------------Menu Itens------------------------------------------------------------>
+    </nav>
+    <!----------------------------------------------------End Navbar------------------------------------------------------------>
+    {% endblock %}
+    {% block body %}
+    {% endblock %}
+
+  <!--------------------------------------------------- Footer ----------------------------------------------------------------------------->
+  {% block footer %}
+  <footer>
+    <div align="center" class="footerlinks">
+      <p align="center" class="text-muted copyright">Rutgers Bootcamp Final Project 2020</p>
+    </div>
+  </footer>
+  {% endblock %}
+<!--------------------------------------------------- Footer ----------------------------------------------------------------------------->
+  {% block base_script %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+  <script src="static/js/bootstrap.min.js"></script> 
+  
+  <script>
+  $('#topnavbar').affix({
+     offset: {
+         top: $('#banner').height()
+     }   
+  }); 
+  </script>
+  {% endblock %}
+  {% block additional_scripts %}
+  {% endblock %}
+  </body>
+</html>

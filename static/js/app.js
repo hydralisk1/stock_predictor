@@ -1,3 +1,5 @@
+var days = 30;
+
 function optionChanged(code){
     d3.csv("static/resources/stock_codes.csv").then(data =>{
         d3.json(`api?code=${code}`).then(value =>{
@@ -26,13 +28,11 @@ function optionChanged(code){
               .append("option")
               .attr("value", d => d)
               .text(d => `${d} days`);
-            
-            var days = 30;
 
             d3.selectAll("#days")
               .on("click", function() {
-                  console.log(days, this.value);
-                    if(days !== this.value)
+                  console.log(days, +this.value);
+                    if(days !== +this.value)
                         days = this.value;
                         chart(value.value, value.pred_prices, value.code, days);
               });
@@ -53,15 +53,16 @@ function chart(stock_prices, pred_prices, code, days){
         type: "scatter"
     };
 
-    var next_days = d => {
+    var next_days = () => {
         var days = [];
         var dates = new Date();
         var dayofweek = dates.getDay();
         dates.setDate(dates.getDate()-dayofweek-2);
         var format = d3.timeFormat("%Y-%m-%d");
         days.push(format(dates));
+        
         dates.setDate(dates.getDate()+2);
-        for(var i=0;i<=5;i++){
+        for(var i=0;i<5;i++){
             days.push(format(dates.setDate(dates.getDate()+1)));
         }
         
@@ -74,12 +75,12 @@ function chart(stock_prices, pred_prices, code, days){
     if(dayofweek === 0 || dayofweek === 1 || dayofweek === 6)
         var back = -1;
     else
-        var back = dayofweek*-1-1; 
+        var back = dayofweek*-1;
 
-    predicted_prices.unshift(chart_stock.slice(back, back+1).pop()["close"]);
+    predicted_prices.unshift(chart_stock.map(d=>d.close).slice(back, back+1)[0]);
 
     var trace2 = {
-        x: next_days(chart_stock.slice(-1).pop()["date"]),
+        x: next_days(),
         y: predicted_prices,
         mode: "lines",
         name: "Predicted Prices",

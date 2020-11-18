@@ -14,6 +14,22 @@ companies = what_we_have()
 def index():
     return render_template("index.html")
 
+@app.route("/chart")
+def chart():
+    return render_template("visualizations.html")
+
+@app.route("/data")
+def data():
+    return render_template("data.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/info")
+def info():
+    return render_template("infoPage.html")
+
 @app.route("/api")
 def api():
     if request.args.get("code"):

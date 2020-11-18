@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block body %}
+<!--------------------------------------------------- Joonil Code----------------------------------------------------------------------------->
+    <div class="container" style="padding: 50px 0px 120px;">
+      <div class="row">
+          <div class="col-md-6">
+              <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          </div>
+          <div class="col-md-2">
+              <select id="days"></select>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12">
+              <div id="chartDiv"></div>
+          </div>
+      </div>
+    </div>
+{% endblock %}
+{% block additional_scripts %}
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="static/js/app.js"></script>
+{% endblock %}
