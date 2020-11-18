@@ -31,7 +31,6 @@ function optionChanged(code){
 
             d3.selectAll("#days")
               .on("click", function() {
-                  console.log(days, +this.value);
                     if(days !== +this.value)
                         days = this.value;
                         chart(value.value, value.pred_prices, value.code, days);
@@ -53,31 +52,40 @@ function chart(stock_prices, pred_prices, code, days){
         type: "scatter"
     };
 
+    var lastFriDay = new Date();
+    var dayofweek = lastFriDay.getDay();
+
+    if(dayofweek === 6 || dayofweek === 7)
+        lastFriDay.setDate(lastFriDay.getDate()-dayofweek+5);
+    else
+        lastFriDay.setDate(lastFriDay.getDate()-dayofweek-2);
+    
     var next_days = () => {
-        var days = [];
-        var dates = new Date();
-        var dayofweek = dates.getDay();
-        dates.setDate(dates.getDate()-dayofweek-2);
         var format = d3.timeFormat("%Y-%m-%d");
-        days.push(format(dates));
+        var datesThisWeek = [];
+        datesThisWeek.push(format(lastFriDay));
+        var thisWeek = new Date(lastFriDay);
         
-        dates.setDate(dates.getDate()+2);
+        thisWeek.setDate(thisWeek.getDate()+2);
         for(var i=0;i<5;i++){
-            days.push(format(dates.setDate(dates.getDate()+1)));
+            datesThisWeek.push(format(thisWeek.setDate(thisWeek.getDate()+1)));
         }
         
-        return days;
+        return datesThisWeek;
     }
 
-    var dayofweek = new Date();
-    dayofweek = dayofweek.getDay();
-    var predicted_prices = pred_prices.map(d=>+d);
-    if(dayofweek === 0 || dayofweek === 1 || dayofweek === 6)
-        var back = -1;
-    else
-        var back = dayofweek*-1;
+    var predicted_prices = pred_prices.map(d => d);
+    var lastFriDayPrice = d =>{
+        var format = d3.timeFormat("%Y-%m-%d");
+        var returnPrice = 0;
+        d.forEach(p => {
+            if(format(lastFriDay) === p.date)
+                returnPrice = p.close;
+        });
+        return returnPrice;
+    };
 
-    predicted_prices.unshift(chart_stock.map(d=>d.close).slice(back, back+1)[0]);
+    predicted_prices.unshift(lastFriDayPrice(chart_stock));
 
     var trace2 = {
         x: next_days(),
@@ -105,4 +113,4 @@ function chart(stock_prices, pred_prices, code, days){
     Plotly.newPlot("chartDiv", [trace1, trace2], layout);
 }
 
-optionChanged("AAPL");
+optionChanged("AAL");

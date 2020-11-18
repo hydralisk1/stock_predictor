@@ -2,18 +2,94 @@
 
 {% block body %}
 <!--------------------------------------------------- Joonil Code----------------------------------------------------------------------------->
-    <div class="container" style="padding: 50px 0px 120px;">
+    <div class="container" style="padding: 50px 0px 100px;">
       <div class="row">
           <div class="col-md-6">
               <select id="selDataset" onchange="optionChanged(this.value)"></select>
           </div>
           <div class="col-md-2">
-              <select id="days"></select>
+              <select class="custom-select mr-sm-2" id="days"></select>
           </div>
       </div>
       <div class="row">
           <div class="col-md-12">
               <div id="chartDiv"></div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12">
+            <p><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Which model is it used?
+            </button></p>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <p>
+                        <h3>Univariate CNN model (Convolutional Neural Networks)</h3><br />
+                        <ol>
+                            <li>
+                                <h4>The architecture of univariate CNN model with prior one week's data as the input</h4>
+                                <img src="static\img\cnn(layer).PNG" width="454" height="465"/>
+                                <ul><li>This model predicts close prices for next weekdays.</li></ul>
+                            </li>
+                            <br />
+                            <li>
+                                <h4>Test Result</h4>
+                                <ul>
+                                    <li>
+                                        Data: Closing stock prices of Apple(AAPL) from 12-15-1980 to 11-13-2020
+                                        <ul>
+                                            <li>Training Data: 80% of the records</li>
+                                            <li>Test Data: 20% of the records</li>
+                                            <img src="static\img\inputoutput.PNG" width="660" height="78" />
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Input: Weekly close prices - Shape(?, 5, 1)
+                                    </li>
+                                    <li>
+                                        Output: predicted close prices - Shape(?, 5)
+                                    </li>
+                                    <li>
+                                        Score
+                                        <ul>
+                                            <li>Total RMSE Score: 2.54</li>
+                                            <li>RMSE Score by day of week
+                                                <ul>
+                                                    <li>Mon: 1.87</li>
+                                                    <li>Tue: 2.07</li>
+                                                    <li>Wed: 2.5</li>
+                                                    <li>Thu: 3</li>
+                                                    <li>Fri: 3.04</li>
+                                                </ul>
+                                            </li>
+                                            <li>                                                
+                                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#rmse" aria-expanded="true" aria-controls="rmse">
+                                                    > See the function to get RMSE score
+                                                </button>                                                    
+                                                <div id="rmse" class="collapse">
+                                                    <div class="card-body">
+                                                      <img src="static\img\RMSE.PNG" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#test_chart" aria-expanded="true" aria-controls="test_chart">
+                                            > See the chart comparing predicted prices to actual prices
+                                        </button>
+                                        <div id="test_chart" class="collapse">
+                                            <div class="card-body">
+                                              <img src="static\img\chart.PNG" />
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
           </div>
       </div>
     </div>
