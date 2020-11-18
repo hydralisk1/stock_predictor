@@ -1,53 +1,107 @@
 {% extends "base.html" %}
+{% block additional_style %}
+  <link rel="stylesheet" href="static/css/style-doug.css">
+{% endblock %}
 
 {% block body %}
-  <!----------------------------------------------------Begin Second Banner------------------------------------------------------------>
-    <div class="banner">
-        <p align="center"> <img src="static/img/Stock_Market_Image.jpg" class="img-responsive" alt="Stock_Market_Image"/></p>
-    </div><br />
-  
-    <div class="row heading">
-      <div class="col-md-6 col-md-offset-3" align="center">
-          <h1 class="blog-post-heading">Noteworthy Stocks</h1>
+  <div class="container">
+    <div id = "area1" class="col-md-12" style="margin-top:40px;">
+      <div id="area11" class="col-md-3">
+        <h3>WHAT IS A STOCK?</h3>
+        <p> &ensp;&ensp;A stock is a share in a company.&ensp;If you buy stock in a company, you are buying shares, 
+          or a percentage of the company, you become part owner.&ensp;Companies looking to earn capital have two 
+          choices, borrow money or sell pieces of their company.</p>
+          <p>&ensp;&ensp;In simplest terms, if a company is worth one million dollars and they sell a million shares, 
+          each one is worth one dollar.&ensp;Later, if the company becomes worth two million dollars, each share 
+          becomes worth two dollars.&ensp;Conversely, if the company later becomes worth a hundred thousand dollars, 
+          each share is only worth ten cents.</p>
+      </div>
+      <div id="area12" class="col-md-4">
+        <h3>MARKET vs EXCHANGE</h3>
+        <p>&ensp;&ensp;We all know what a market is, a place to buy or sell goods.&ensp;Markets have been around 
+          for thousands of years; even before currency was invented, people would gather to trade their goods.</p>
+        <p>&ensp;&ensp;A stock market is a little more complicated and a little less tangible, it has become an 
+          entity within itself, an aggregation of all the buyers and sellers.&ensp;We can give it a net worth, 
+          we can quantify its value and track its changes.</p>
+        <p>&ensp;&ensp;A stock exchange is the more tangible idea of a marketplace, a place where stocks are bought 
+          and sold.&ensp;The New York Stock Exchange (NYSE) is the most familiar and largest in the world and it 
+          has a physical location on Wall Street in New York, USA.&ensp;A stock exchange itself can be evaluated and 
+          valuated and considered a company and one can purchase a percentage of ownership in a stock exchange.</p>
+      </div>
+      <div id="area13" class="col-md-4">
+        <h3>SOME HISTORY</h3>
+        <p>&ensp;&ensp;Many believe that the founding of the Dutch East India Company in 1602 was the start of 
+          corporate trading.&ensp;Others would go as far back as ancient Rome and quote Cicero (106-43 BC) from a 
+          speech, “shares that had a very high price at the time”.</p>
+        <p>&ensp;In 1693 King William of England issued government bonds to help subsidize expenses of war.  In 1792 
+          the Buttonwood Agreement was signed in New York and began organized securities trading; in 1817 they 
+          re-formed as the New York Stock Exchange, which later, in 1943, allowed women onto the trading floor.</p>
+        <p>&ensp;&ensp;The buying and selling of commodities at a stock exchange has changed over the years.
+          &ensp;Initially, all business was done in person, on ‘the floor’ of the exchange.&ensp;The advent of the 
+          telegraph first allowed for remote trading.&ensp;Phone lines and computers expanded the ease of remote 
+          trading and currently anyone with a computer or smart phone (and internet access) can buy and sell in 
+          real time.</p>
       </div>
     </div>
-<!----------------------------------------------------End Second Banner------------------------------------------------------------>
-  
-<!----------------------------------------------------Begin Main Content------------------------------------------------------------>
-
-
-    <div class="jumbotron blogtext">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3"><br />
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus, magna vitae rutrum ornare, orci nulla vestibulum quam, sit amet maximus turpis tellus sed ipsum. Suspendisse sem ligula, molestie sed euismod nec, consectetur quis diam. Mauris lobortis elit non rhoncus pellentesque.</p><br />
-              <h3 align="center"><strong>STOCK 1</strong></h3><br />
-              <p align="center"><img src="static/img/Stock_Market_Image2.jpg" alt="Stock2" class="img-responsive" /></p>
-
-              <p>Nunc dictum nec tellus nec hendrerit. Etiam leo felis, congue vitae placerat vel, vestibulum id massa. Maecenas cursus, ante sit amet placerat rhoncus, risus est auctor diam, in pulvinar magna lectus at erat.</p>
-              <p>Nullam eget neque tellus. In tellus odio, pretium ac risus vitae, bibendum dignissim lectus. Vestibulum hendrerit libero nec mauris feugiat vehicula. Duis malesuada diam tempor odio efficitur, vitae faucibus purus ornare.</p>
-              <p>Aenean rhoncus mauris id sapien gravida lobortis. Praesent vel eleifend purus. Nulla euismod pharetra massa sit amet vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras nec semper quam.</p><br />
-
-              <h3 align="center"><strong>STOCK 2</strong></h3><br />
-              <p align="center"><img src="static/img/Stock_Market_Image3.jpg" alt="Stock3" class="img-responsive" /></p>
-
-              <p>Aliquam mattis eros nulla, at luctus eros porttitor quis. Vivamus eu erat non quam pharetra bibendum. Duis quis faucibus justo, in suscipit urna. Pellentesque lacinia tortor id purus mollis maximus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In ultrices vel dolor vel sodales.</p>
-              <p>Vivamus interdum diam nec velit lobortis fringilla. Aliquam dapibus felis nec laoreet malesuada. Nullam gravida fermentum leo eu semper. Donec eget leo consequat neque dictum dignissim a malesuada dui. Nam at lacus laoreet, interdum velit sit amet, scelerisque augue. Aliquam quis feugiat odio, a ornare dui. In a condimentum ex, in placerat quam. Sed sed tincidunt nisl.</p>
-              <p>Sed aliquet augue quis ullamcorper mollis. Nullam pulvinar, dui eget blandit aliquet, lacus ligula lacinia mi, ultrices rutrum metus ex quis turpis. Vestibulum vulputate, felis quis vehicula finibus, elit turpis pharetra eros, a volutpat est dolor ut dui. Suspendisse sed felis et magna gravida lacinia. Mauris pharetra, neque in luctus mollis, massa nibh pellentesque enim, lacinia sodales mi diam sed mi. Nulla facilisi.</p><br />
-
-
-              <h3 align="center"><strong>STOCK 3</strong></h3><br />
-              <p align="center"><img src="static/img/Stock_Market_Image4.jpg" alt="Stock4" class="img-responsive" /></p>
-
-
-              <p>Aliquam sollicitudin ipsum quis erat volutpat, suscipit sodales dolor maximus. Suspendisse sit amet odio a lacus varius faucibus eu ut nunc. Integer in mauris mattis, pellentesque neque molestie, auctor nunc. Proin posuere nisl at velit aliquam commodo. Aenean congue est justo.</p>
-              <p>Quisque consectetur tincidunt est vel gravida. Maecenas pretium diam feugiat porta molestie. Duis metus massa, ullamcorper in neque ac, feugiat tincidunt nulla. Ut interdum est sit amet nulla congue pellentesque. '</p>
-              <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In molestie erat id orci ornare condimentum. Proin lacinia est eu eros vehicula molestie. Praesent ac iaculis felis.</p>        
-          </div>
+    <div id= "area2" class="col-md-12">
+      <div id="area21" class="col-md-4">
+        <h3>THE MACHINES</h3>
+          <p>&ensp;&ensp;Machine learning was a term first used in the late 1950’s and throughout the 60’s and 70’s 
+            computers were taught to recognize patterns in an attempt to “teach themselves” and give them the ability 
+            to make predictions.&ensp;Even the most advanced machine learning models of today are still just looking 
+            for patterns.</p>
+          <p>&ensp;&ensp;In the past 60 years computer processing has gotten cheaper and faster and more advanced 
+            algorithms are able to be used on data.&ensp;Things like weather forecasting are able to process a slew 
+            of inter-related, constantly changing variables with fairly decent accuracy.</p>
+      </div>
+      <!-- <div id="filler" class="col-md-1"> </div> -->
+      <div id="area22" class="col-md-7">
+        <h3>PREDICTING</h3>
+        <p>&ensp;&ensp;Unlike the weather, the stock market does not follow the laws of Newtonian physics.&ensp;It behaves 
+          sometimes in a logical fashion and other times emotionally, following the whims of the populous; behaving out of 
+          fear or hope, confidence or panic.&ensp;Its variables are things of global or local happenings, details about the 
+          company, how much their product is valued by its consumers, or how it or they are perceived by the public, etc.
+          &ensp;At nearly every level of these variables are humans and predicting their behavior is a science within 
+          itself.</p>
+        <p>&ensp;&ensp;People have come up with all kinds of variables to use in their models when trying to predict the 
+          market.&ensp;Keywords from past news headlines have been compared to the market, recently the presidents tweets 
+          have been used in the same manner.&ensp;Ultimately there is no way to really predict the stock market; the 
+          Efficient Market Hypothesis states that the value of a stock, or an entire market, is dependent on all available 
+          information at the moment.&ensp;Moments are constantly changing and so any prediction can only be accurate to now, 
+          not into the future.</p>
+        <p>&ensp;&ensp;Though not controlled by Newtonian physics, the market is part of the universe and is still 
+          susceptible to the uncertainty principal, exemplified in quantum physics; in a nutshell, nothing can ever be 
+          certain, only predicted with a certain level of accuracy.  This is not to say that both short and long term 
+          predictions can not be made by individuals studied in necessary variables with more accurate than not 
+          outcomes.</p>
+      </div>
+      <div id = "area3" class="col-md-12">
+        <div id="filler" class="col-md-1"></div>
+        <div id="filler" class="col-md-10">
+          <p>&ensp;</p>
+          <h3>IT LOOKS GOOD, WHAT'S WRONG WITH IT?</h3>
+          <p>&ensp;</p>
+          <p>&ensp;&ensp;When we train a computer model to predict stock prices based on 
+            historical data, we are asking the computer to find patterns and project those patterns into the future.
+            &ensp;More often than not when we plot actual prices vs predicted prices from a set of historical data, the 
+            computer’s predictions almost perfectly match the actual prices.&ensp;The truth is the computer has simply 
+            gotten good at projecting a current price forward in time by a day or two; it finds patterns that fit up 
+            until the current moment but the truth is that a pattern into the future does not exist until it happens.
+            &ensp;The predictions that are made can seem fairly accurate but  you can’t trade these prices because the 
+            per-day accuracy is not good enough to make money.</p>
+          <p>&ensp;&ensp;Being able to predict the stock market would be like winning the lottery.&ensp;As modern 
+            humans we are often times driven by money.&ensp;Money for food and shelter, for a ‘rainy day’, for 
+            our retirement and of course money to enjoy ourselves, to have a nicer house, a nicer car, to be able to 
+            retire early. &ensp;For many, the stock market becomes a means of investing in our future, in our children’s 
+            future. &ensp;We hope that we make wise decisions and that we don’t ‘loose our shirt’. &ensp;One can be most 
+            secure in the long term fact that markets rise over time and in the interim dance up and down.</p>
+          <p>&ensp;&ensp;If by chance we could predict this up and down dance or predict what stocks will rise sharply 
+            and for how long, then what?&ensp;All things behave differently when they are observed, from a single 
+            photon of light to a multi-trillion dollar market.&ensp;The market would adapt and our model would become 
+            obsolete.</p>
+          <p>&ensp;</p><p>&ensp;</p><p>&ensp;</p><p>&ensp;</p>
         </div>
-    </div>
-
-    <br/>
-
-
-  <!----------------------------------------------------End Main Content------------------------------------------------------------>
+      </div>
+  </div>
+</div>
 {% endblock %}

@@ -18,17 +18,13 @@ def index():
 def chart():
     return render_template("visualizations.html")
 
-@app.route("/data")
-def data():
-    return render_template("data.html")
+@app.route("/resource")
+def resource():
+    return render_template("resource.html")
 
 @app.route("/about")
 def about():
     return render_template("about.html")
-
-@app.route("/info")
-def info():
-    return render_template("infoPage.html")
 
 @app.route("/api")
 def api():
