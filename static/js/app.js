@@ -100,12 +100,10 @@ function chart(stock_prices, pred_prices, code, days){
         xaxis: {
             title: {text: "Date"},
             tickformat: "%m-%d-%Y",
-            showgrid: false,
             showline: true
         },
         yaxis: {
             title: {text: "USD ($)"},
-            showgrid: false,
             showline: true
         }
     };
